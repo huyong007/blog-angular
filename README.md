@@ -1,2 +1,2 @@
 # blog-angular
-this is  a blog by angular and exress
+this is  a blog by angular and express
