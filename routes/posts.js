@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET posts listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'myBlog',content:'8:模版引擎' });
+  res.render('posts', { title: '创作我的创作' });
 });
-
+  
 module.exports = router;
+   
