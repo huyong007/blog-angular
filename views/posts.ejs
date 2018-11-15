@@ -5,23 +5,31 @@
         <%= title %>
     </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
-    <div><input placeholder="请输入标题" /></div>
-    <textarea placeholder="请输入内容"></textarea>
-    <% for(let i = 0,max =postsList.length;i < max;i+=1){%>
-        <p>
-            <%=postsList[i] %>
-        </p>
-        <%}%>
-            <div>
-                <button onclick="toIndex()"><a href='./'>click me to index</a></button>
+    <div id='app'>
+        <h1>
+            <%= title %>
+        </h1>
+        <div><input placeholder="请输入标题" /></div>
+        <textarea placeholder="请输入内容"></textarea>
+        <br/>
+        <div v-for="item in postList" style="display: inline-flex">
+            <div >
+                <img :src="item.picture.large" />
+                <!-- <p>{{item.gender}}</p> -->
             </div>
 
+            <br/>
+        </div>
+
+        <div>
+            <button onclick="toIndex()"><a href='./'>click me to index</a></button>
+        </div>
+    </div>
 </body>
 
 </html>
@@ -29,4 +37,28 @@
     function toIndex() {
         console.log('click test');
     }
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            postList: [],
+        },
+        methods: {
+            fetchData() {
+                axios.get('https://api.randomuser.me/',
+                    {
+                        params: {
+                            results: 200,
+                            pi: 1,
+                            ps: 20,
+                            _allow_anonymous: true
+                        }
+                    })
+                    .then(function (res) {
+                        vm.postList = res.data.results;
+                        console.log(vm.postList);
+                    });
+            }
+        }
+    })
+    vm.fetchData();
 </script>
