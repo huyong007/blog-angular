@@ -13,9 +13,14 @@
     </h1>
     <div><input placeholder="请输入标题" /></div>
     <textarea placeholder="请输入内容"></textarea>
-    <div>
-        <button onclick="toIndex()"><a href='./index'>click me to index</a></button>
-    </div>
+    <% for(let i = 0,max =postsList.length;i < max;i+=1){%>
+        <p>
+            <%=postsList[i] %>
+        </p>
+        <%}%>
+            <div>
+                <button onclick="toIndex()"><a href='./'>click me to index</a></button>
+            </div>
 
 </body>
 
