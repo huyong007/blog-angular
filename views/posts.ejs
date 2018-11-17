@@ -16,15 +16,17 @@
         </h1>
         <div><input placeholder="请输入标题" /></div>
         <textarea placeholder="请输入内容"></textarea>
-        <br/>
-        <div v-for="item in postList" style="display: inline-flex">
-                <img :src="item.picture.large" />
-                <!-- <p>{{item.gender}}</p> -->
-        </div>
-
         <div>
             <button onclick="toIndex()"><a href='./'>click me to index</a></button>
         </div>
+        <br/>
+        <div class="pic_container">
+            <div class="pic_container_item" v-for="item in picList" >
+                <img :src="item.picture.large" />
+                <div>phone:{{item.phone}}</div>
+            </div>
+        </div>
+
     </div>
 </body>
 
@@ -36,7 +38,7 @@
     var vm = new Vue({
         el: '#app',
         data: {
-            postList: [],
+            picList: [],
         },
         methods: {
             fetchData() {
@@ -50,8 +52,7 @@
                         }
                     })
                     .then(function (res) {
-                        vm.postList = res.data.results;
-                        console.log(vm.postList);
+                        vm.picList = res.data.results;
                     });
             }
         }

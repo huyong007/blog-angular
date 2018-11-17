@@ -4,5 +4,23 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color:#000000;
+  text-decoration : none;
+}
+button {
+  background-color: #00B7FF;
+}
+
+.pic_container{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: #76D7C4;
+  padding: 10px;
+  grid-gap: 5px;
+}
+.pic_container_item{
+  background-color: rgba(46, 204, 112, 0.164);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
 }
