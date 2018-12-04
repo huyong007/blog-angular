@@ -15,7 +15,6 @@ router.get('/list', function(req, res, next) {
       res.json({ success: false });
       return;
     }
-
     res.json({ success: true, postsList: posts });
   });
 });
