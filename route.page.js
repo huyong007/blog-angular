@@ -32,4 +32,13 @@ router.get('/posts/show', function (req, res, next) {
         res.render('show', { post });
     });
 });
+
+/* GET posts edit page. */
+router.get('/posts/edit', function (req, res, next) {
+    var id = req.query.id;
+
+    res.render('edit', { id });
+});
+
+
 module.exports = router;
