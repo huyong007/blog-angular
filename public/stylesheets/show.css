@@ -1,0 +1,45 @@
+
+body{
+    display: grid;
+    grid-template-rows: auto ;
+    grid-auto-columns: 20% [page]60% 20%;  
+}
+.page {
+    display: grid;
+    grid-template-rows: auto 50%;
+    grid-auto-columns: auto auto;
+}
+
+.headContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 34px;
+}
+
+.editBtn {
+    width: 70px;
+    height: 35px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:30px; 
+}
+
+a {
+    text-decoration: none
+}
+
+.btn {
+    font-size: 20px;
+    color: #000000;
+}
+
+.content {
+    /* left: 50%; */
+}

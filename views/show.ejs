@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html leng="en">
 
 <head>
     <title>
         <%= post.title %>
     </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/show.css' />
     <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
 </head>
 
 <body>
-    <div id="app">
-        <h1>
-            <%= post.title %>
-        </h1>
-        <div>
+    <div id="app" class="page">
+        <div class="headContainer">
+            <div class="title">
+                <%= post.title %>
+            </div>
+
+            <div class="editBtn">
+                <a class="btn" href="/posts/edit?id=<%=post._id %>">编辑</a>
+            </div>
+        </div>
+        <div class="content">
             <%-post.content %>
         </div>
+
     </div>
-    <div class="btn-group pull-right">
-        <ul class="dropdown-menu">
-            <li><a href="/posts/edit?id=<%= post._id %>">编辑</a></li>
-        </ul>
-    </div>
+
 </body>
 
 </html>
