@@ -4,11 +4,6 @@ var ArticalModel = require('./models/artical');
 var PostModel = require('./models/post');
 
 /* GET posts listing. */
-
-// router.get('/list', function(req, res, next) {
-//   res.json({postsList: ['文章1', '文章2', '文章3']});
-// });
-
 router.get('/list', function (req, res, next) {
   PostModel.find({}, {}, function (err, posts) {
     if (err) {
@@ -55,7 +50,7 @@ router.post('/posts/edit', function (req, res, next) {
 
   PostModel.findOneAndUpdate({ _id: id }, { title, content }, function (err) {
       if (err) {
-          res.json({ success: false });
+          res.json({ success: false });   
       } else {
           res.json({ success: true });
       }
