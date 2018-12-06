@@ -19,7 +19,9 @@
                     <textarea class="form-control" rows="3" v-model="content" placeholder="输入文章内容"></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default" v-on:click="submit">提交</button>
+                    <button class="btn btn-default" v-on:click="submit">
+                        <a v-bind:href="url">提交</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -33,9 +35,11 @@
         el: '#app',
         data: {
             title: '',
-            content: ''
+            content: '',
+            url: ''
         },
         created() {
+            this.url = '/posts/show?id=' + postId
             axios.get('/api/posts/one?id=' + postId)
                 .then(function (response) {
                     vm.title = response.data.post.title;
@@ -47,8 +51,6 @@
         },
         methods: {
             submit() {
-                console.log('vm.title', vm.title);
-
                 if (!vm.title || !vm.content) {
                     alert('内容或者标题不能为空');
                 } else {
@@ -56,10 +58,12 @@
                         {
                             id: postId,
                             title: vm.title,
-                            content: vm.content
+                            content: vm.content,
                         })
                         .then(function (response) {
-                            alert('修改成功');
+                            setTimeout(() => {
+
+                            }, 3000);
                         })
                         .catch(function (err) {
                             alert(err);
