@@ -40,7 +40,7 @@
         },
         created() {
             this.url = '/posts/show?id=' + postId
-            axios.get('/api/posts/one?id=' + postId)
+            axios.get('/api/v1/posts/one?id=' + postId)
                 .then(function (response) {
                     vm.title = response.data.post.title;
                     vm.content = response.data.post.content;

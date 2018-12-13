@@ -41,7 +41,7 @@
         if (!vm.title || !vm.content) {
           alert('内容或者标题不能为空');
         } else {
-          axios.post('/api/create',
+          axios.post('/api/v1/create',
             {
               title: vm.title,
               content: vm.content

@@ -30,7 +30,7 @@
         },
         methods: {
             fetchData() {
-                axios.get('/api/list')
+                axios.get('/api/v1/list')
                     .then(function (response) {
                         vm.postsList = response.data.postsList;
                         vm.postsList.forEach((element) => {
