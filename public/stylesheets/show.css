@@ -1,19 +1,16 @@
 
-body{
-    display: grid;
-    grid-template-rows: auto ;
-    grid-auto-columns: 20% [page]60% 20%;  
-}
 .page {
-    display: grid;
-    grid-template-rows: auto 50%;
-    grid-auto-columns: auto auto;
+    display: flex;
+    margin: 0 200px 0 200px;  
+    flex-direction: column;
 }
 
 .headContainer {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 70px;
 }
 
 .title {
@@ -28,7 +25,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:30px; 
+    margin-left:300px; 
 }
 
 a {
