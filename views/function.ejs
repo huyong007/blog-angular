@@ -1,0 +1,28 @@
+<div class="newContainer">
+    <div class="title">计划从天开始</div>
+    <div class="region">
+        <div class="select">
+            <input type="date" v-model="startTime" /><span>开始时间</span>
+            <input type="date" v-model="endTime" /><span>结束时间</span>
+            <button @click="calculate">计算</button>
+        </div>
+        <div class="content">展示结果</div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            startTime: '',
+            endTime: ''
+        },
+        methods: {
+            calculate() {
+                console.log('startTime', startTime);
+                console.log('123');
+            }
+        },
+
+    });
+</script>

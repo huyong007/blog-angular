@@ -1,35 +1,19 @@
-<html>
-
-<head>
-    <title>
-        <%= title %>
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
-    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
-</head>
-
-<body>
-    <div id='app'>
-        <h1>
-            <%= title %>
-        </h1>
-        <p>测试分支切换</p>
-        <div>
-            <button onclick="toIndex()"><a href='./'>click me to index</a></button>
-        </div>
-        <br/>
-        <div class="pic_container">
-            <div class="pic_container_item" v-for="item in picList" >
-                <img :src="item.picture.large" />
-                <div>phone:{{item.phone}}</div>
-            </div>
-        </div>
-
+<h1>
+    <%= title %>
+</h1>
+<p>测试分支切换</p>
+<div>
+    <button onclick="toIndex()"><a href='./'>click me to index</a></button>
+</div>
+<br/>
+<div class="pic_container">
+    <div class="pic_container_item" v-for="item in picList">
+        <img :src="item.picture.large" />
+        <div>phone:{{item.phone}}</div>
     </div>
-</body>
+</div>
 
-</html>
+
 <script>
     function toIndex() {
         console.log('click test');

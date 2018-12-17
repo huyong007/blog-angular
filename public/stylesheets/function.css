@@ -1,0 +1,24 @@
+.newContainer {
+    margin-top: 50px;
+    width: 500px;
+    height: 500px;
+    display: block;
+    border: 1px dotted gray;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+    grid-template-rows: 10% auto
+}
+
+.region {
+    grid-template-columns: 70% auto;
+}
+
+/* 
+.select {
+    float: left;
+}
+
+.content {
+    float: right;
+} */

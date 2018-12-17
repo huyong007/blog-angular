@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href='/stylesheets/style.css' />
 
-    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
-    <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <div class="container">
-        <%- body %>
-      </div>
+<head>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href='/stylesheets/style.css' />
+
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+</head>
+
+<body>
+  <!-- <button type="button" class="btn btn-default"><a href='./'>返回主页</a></button>
+  <button type="button" class="btn btn-default"><a href='./create'>新建文章</a></button>
+  <button class="btn btn-default"><a href='./function'>功能试验区</a></button>
+  <button class="btn btn-default"><a href='./posts'>测试接口页面</a></button> -->
+  <div class="topnav">
+    <a class="active" href='./'>返回主页</a>
+    <a href='./create'>新建文章</a>
+    <a href='./function'>功能试验区</a>
+    <a href='./posts'>测试接口页面</a>
+  </div>
+  <div id="app">
+    <div class="container">
+      <%- body %>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

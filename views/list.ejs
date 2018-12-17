@@ -1,27 +1,10 @@
-<head>
-    <title>
-        <%= title %>
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
-</head>
+<ul class="list-group" v-for="item in postsList">
+    <li class="list-group-item" v-if="item.title">
+        <a v-bind:href="item.url">{{ item.title }}</a>
+    </li>
+</ul>
 
-<body>
-    <div id="app">
-        <button type="button" class="btn btn-default"><a href='./'>返回主页</a></button>
-        <button type="button" class="btn btn-default"><a href='./create'>新建</a></button>
 
-        <ul class="list-group" v-for="item in postsList">
-            <li class="list-group-item" v-if="item.title">
-                <a  v-bind:href="item.url">{{ item.title }}</a>
-            </li>
-        </ul>
-
-    </div>
-</body>
 <script>
     var vm = new Vue({
         el: '#app',
